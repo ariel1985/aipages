@@ -337,7 +337,586 @@
               </div>
             </div>
           `
-        }
+        },
+        {
+          id: 'product-card',
+          label: 'Product Card',
+          content: `<style>@import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);</style>
+<div class="min-w-screen min-h-screen bg-yellow-300 flex items-center p-5 lg:p-10 overflow-hidden relative">
+    <div class="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
+        <div class="md:flex items-center -mx-10">
+            <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
+                <div class="relative">
+                    <img src="https://pngimg.com/uploads/raincoat/raincoat_PNG53.png" class="w-full relative z-10" alt="">
+                    <div class="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 px-10">
+                <div class="mb-10">
+                    <h1 class="font-bold uppercase text-2xl mb-5">Mens's Ragged <br>Waterproof Jacket</h1>
+                    <p class="text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing, elit. Eos, voluptatum dolorum! Laborum blanditiis consequatur, voluptates, sint enim fugiat saepe, dolor fugit, magnam explicabo eaque quas id quo porro dolorum facilis... <a href="#" class="opacity-50 text-gray-900 hover:opacity-100 inline-block text-xs leading-none border-b border-gray-900">MORE <i class="mdi mdi-arrow-right"></i></a></p>
+                </div>
+                <div>
+                    <div class="inline-block align-bottom mr-5">
+                        <span class="text-2xl leading-none align-baseline">$</span>
+                        <span class="font-bold text-5xl leading-none align-baseline">59</span>
+                        <span class="text-2xl leading-none align-baseline">.99</span>
+                    </div>
+                    <div class="inline-block align-bottom">
+                        <button class="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BUY ME A BEER AND HELP SUPPORT OPEN-SOURCE RESOURCES -->
+<div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+    <div>
+        <a title="Buy me a beer" href="https://www.buymeacoffee.com/scottwindon" target="_blank" class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
+            <img class="object-cover object-center w-full h-full rounded-full" src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"/>
+        </a>
+    </div>
+</div>`,
+        },
+        {
+          id: 'contact-us-form-1',
+          label: 'Contact Us Form 1',
+          content: `
+  <style>
+  .icon::after{
+  content: '';
+  display: block;
+  position: absolute;
+  border-top: 23px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 12px solid #3182ce;
+  left: 100%;
+  top: 0;
+}
+  </style>
+            <form action="" class="form bg-white p-6 my-10 relative">
+               
+                <div class="icon bg-blue-600 text-white w-6 h-6 absolute flex items-center justify-center p-5" style="left:-40px"><i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i></div>
+                <h3 class="text-2xl text-gray-900 font-semibold">Let us call you!</h3>
+                <p class="text-gray-600"> To help you choose your property</p>
+                <div class="flex space-x-5 mt-3">
+                    <input type="text" name="" id="" placeholder="Your Name" class="border p-2  w-1/2">
+                    <input type="tel" name="" id="" placeholder="Your Number" class="border p-2 w-1/2">
+                </div>
+                <input type="email" name="" id="" placeholder="Your Email" class="border p-2 w-full mt-3">
+                <textarea name="" id="" cols="10" rows="3" placeholder="Tell us about desired property" class="border p-2 mt-3 w-full"></textarea>
+                <p class="font-bold text-sm mt-3">GDPR Agreement *</p>
+                <div class="flex items-baseline space-x-2 mt-2">
+                    <input type="checkbox" name="" id="" class="inline-block">
+                    <p class="text-gray-600 text-sm">I consent to having this website store my submitted information so they can respond to my inquiry.</p>
+                </div>
+                <input type="submit" value="Submit" class="w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white font-semibold p-3">
+
+            </form>`,
+        },
+        {
+          id: 'get-in-touch',
+          label: 'Get in Touch',
+          content: `<div class="relative flex items-top justify-center min-h-screen bg-white dark:bg-gray-900 sm:items-center sm:pt-0">
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+            <div class="mt-8 overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
+                        <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
+                            Get in touch
+                        </h1>
+                        <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+                            Fill in the form to start a conversation
+                        </p>
+
+                        <div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                                Acme Inc, Street, State,
+                                Postal Code
+                            </div>
+                        </div>
+
+                        <div class="flex items-center mt-4 text-gray-600 dark:text-gray-400">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                                +44 1234567890
+                            </div>
+                        </div>
+
+                        <div class="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                                info@acme.org
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="p-6 flex flex-col justify-center">
+                        <div class="flex flex-col">
+                            <label for="name" class="hidden">Full Name</label>
+                            <input type="name" name="name" id="name" placeholder="Full Name" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none">
+                        </div>
+
+                        <div class="flex flex-col mt-2">
+                            <label for="email" class="hidden">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Email" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none">
+                        </div>
+
+                        <div class="flex flex-col mt-2">
+                            <label for="tel" class="hidden">Number</label>
+                            <input type="tel" name="tel" id="tel" placeholder="Telephone Number" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none">
+                        </div>
+
+                        <button type="submit" class="md:w-32 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>`,
+        },
+        {
+          id: 'coming-soon',
+          label: 'Coming Soon',
+          attributes: { class: ''},
+          content: `
+          <div class="w-full h-screen" style="background-image: url('https://vojislavd.com/ta-template-demo/assets/img/coming-soon.jpg');">
+            <div class="w-full h-screen flex flex-col items-center justify-between bg-black bg-opacity-70 py-8">
+                <div class="flex-1 flex flex-col items-center justify-center">
+                    <div class="bg-white bg-opacity-10 px-4 py-2 rounded-xl flex items-center justify-center text-cyan-100 space-x-2 lg:space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 lg:h-8 xl:h-10 w-6 lg:w-8 xl:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                        </svg>
+                        <span class="text-xl lg:text-2xl xl:text-3xl font-bold">Template</span>
+                    </div>
+                    <h1 class="text-6xl lg:text-7xl xl:text-8xl text-gray-200 tracking-wider font-bold font-serif mt-12 text-center">Coming Soon</h1>
+                    <div class="flex flex-col items-center space-y-4 mt-24">
+                        <p class="text-gray-300 uppercase text-sm">Notify me when it's ready</p>
+                        <form class="w-full flex items-center">
+                            <input type="email" name="email" id="email" class="w-72 p-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-gray-300 rounded-tl rounded-bl text-sm" placeholder="Email" autocomplete="off">
+                            <button class="bg-blue-600 hover:bg-blue-700 py-2 px-6 text-gray-100 border border-blue-600 rounded-tr rounded-br text-sm">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <ul class="flex items-center space-x-4">
+                        <li>
+                            <a href="#" title="Facebook">
+                                <svg class="w-6 lg:w-8 h-6 lg:h-8 hover:scale-110 transition duration-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506.86 506.86"><defs><style>.cls-1{fill:#e2e8f0;}</style></defs><path class="cls-1" d="M506.86,253.43C506.86,113.46,393.39,0,253.43,0S0,113.46,0,253.43C0,379.92,92.68,484.77,213.83,503.78V326.69H149.48V253.43h64.35V197.6c0-63.52,37.84-98.6,95.72-98.6,27.73,0,56.73,5,56.73,5v62.36H334.33c-31.49,0-41.3,19.54-41.3,39.58v47.54h70.28l-11.23,73.26H293V503.78C414.18,484.77,506.86,379.92,506.86,253.43Z"></path><path class="cls-2" d="M352.08,326.69l11.23-73.26H293V205.89c0-20,9.81-39.58,41.3-39.58h31.95V104s-29-5-56.73-5c-57.88,0-95.72,35.08-95.72,98.6v55.83H149.48v73.26h64.35V503.78a256.11,256.11,0,0,0,79.2,0V326.69Z"></path></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Twitter">
+                                <svg class="w-6 lg:w-8 h-6 lg:h-8 hover:scale-110 transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M166667 0c92048 0 166667 74619 166667 166667s-74619 166667-166667 166667S0 258715 0 166667 74619 0 166667 0zm90493 110539c-6654 2976-13822 4953-21307 5835 7669-4593 13533-11870 16333-20535-7168 4239-15133 7348-23574 9011-6787-7211-16426-11694-27105-11694-20504 0-37104 16610-37104 37101 0 2893 320 5722 949 8450-30852-1564-58204-16333-76513-38806-3285 5666-5022 12109-5022 18661v4c0 12866 6532 24246 16500 30882-6083-180-11804-1876-16828-4626v464c0 17993 12789 33007 29783 36400-3113 845-6400 1313-9786 1313-2398 0-4709-247-7007-665 4746 14736 18448 25478 34673 25791-12722 9967-28700 15902-46120 15902-3006 0-5935-184-8860-534 16466 10565 35972 16684 56928 16684 68271 0 105636-56577 105636-105632 0-1630-36-3209-104-4806 7251-5187 13538-11733 18514-19185l17-17-3 2z" fill="#e2e8f0"></path></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="LinkedIn">
+                                <svg class="w-6 lg:w-8 h-6 lg:h-8 hover:scale-110 transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M166667 0c92048 0 166667 74619 166667 166667s-74619 166667-166667 166667S0 258715 0 166667 74619 0 166667 0zm-18220 138885h28897v14814l418 1c4024-7220 13865-14814 28538-14814 30514-1 36157 18989 36157 43691v50320l-30136 1v-44607c0-10634-221-24322-15670-24322-15691 0-18096 11575-18096 23548v45382h-30109v-94013zm-20892-26114c0 8650-7020 15670-15670 15670s-15672-7020-15672-15670 7022-15670 15672-15670 15670 7020 15670 15670zm-31342 26114h31342v94013H96213v-94013z" fill="#e2e8f0"></path></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </div>`,
+        },
+        {
+          id: 'shopping-cart',
+          label: 'Shopping Cart',
+          content: `
+<style>
+    @layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+</style>
+
+  <div class="h-screen bg-gray-100 pt-20">
+    <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+    <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+      <div class="rounded-lg md:w-2/3">
+        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+          <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="product-image" class="w-full rounded-lg sm:w-40" />
+          <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+            <div class="mt-5 sm:mt-0">
+              <h2 class="text-lg font-bold text-gray-900">Nike Air Max 2019</h2>
+              <p class="mt-1 text-xs text-gray-700">36EU - 4US</p>
+            </div>
+            <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+              <div class="flex items-center border-gray-100">
+                <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
+                <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="2" min="1" />
+                <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <p class="text-sm">259.000 ₭</p>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
+          <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80" alt="product-image" class="w-full rounded-lg sm:w-40" />
+          <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+            <div class="mt-5 sm:mt-0">
+              <h2 class="text-lg font-bold text-gray-900">Nike Air Max 2019</h2>
+              <p class="mt-1 text-xs text-gray-700">36EU - 4US</p>
+            </div>
+            <div class="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+              <div class="flex items-center border-gray-100">
+                <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
+                <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="2" min="1" />
+                <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <p class="text-sm">259.000 ₭</p>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sub total -->
+      <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+        <div class="mb-2 flex justify-between">
+          <p class="text-gray-700">Subtotal</p>
+          <p class="text-gray-700">$129.99</p>
+        </div>
+        <div class="flex justify-between">
+          <p class="text-gray-700">Shipping</p>
+          <p class="text-gray-700">$4.99</p>
+        </div>
+        <hr class="my-4" />
+        <div class="flex justify-between">
+          <p class="text-lg font-bold">Total</p>
+          <div class="">
+            <p class="mb-1 text-lg font-bold">$134.98 USD</p>
+            <p class="text-sm text-gray-700">including VAT</p>
+          </div>
+        </div>
+        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+      </div>
+    </div>
+  </div>`,
+        },
+        {
+          id: 'hero-section',
+          label: 'Hero section',
+          content: `<div class="h-screen bg-gray-50 flex items-center">
+	<section class="bg-cover bg-center py-32 w-full" style="background-image: url('https://source.unsplash.com/random');">
+		<div class="container mx-auto text-left text-white">
+			<div class="flex items-center">
+				<div class="w-1/2">
+					<h1 class="text-5xl font-medium mb-6">Welcome to My Agency</h1>
+					<p class="text-xl mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+						euismod odio, gravida pellentesque urna varius vitae.</p>
+					<a href="#" class="bg-indigo-500 text-white py-4 px-12 rounded-full hover:bg-indigo-600">Demo</a>
+				</div>
+				<div class="w-1/2 pl-16">
+					<img src="https://source.unsplash.com/random?ux" class="h-64 w-full object-cover rounded-xl" alt="Layout Image">
+      </div>
+				</div>
+			</div>
+	</section>
+</div>`,
+        },
+        {
+          id: 'pricing',
+          label: 'Pricing',
+          content: `<!-- component -->
+    <div x-data="{ 
+        billingType: 'month', 
+        basicPrice: '19',
+        premiumPrice: '29',
+        proPrice: '39'
+    }" class="min-h-full bg-gray-200 pb-12">
+    <div class="w-full bg-blue-900 pt-16 pb-24 text-center">
+        <h4 class="text-2xl text-gray-100">Choose the right plan for you</h4>
+        <p class="text-sm text-gray-100 mt-2">Pricing built for businesses of all sizes. Choose package that suits your needs.</p>
+        <div class="flex items-center justify-center mt-8">
+            <button @click="
+                    billingType = 'month',
+                    basicPrice = '19',
+                    premiumPrice = '29',
+                    proPrice = '39'
+                " class="text-gray-800 px-4 py-2 rounded-tl-lg rounded-bl-lg bg-gray-200" :class=" billingType === 'month' ? 'bg-blue-300' : 'bg-gray-200' " title="Choose Monthly billing">
+                Monthly billing
+            </button>
+            <button @click="
+                    billingType = 'year',
+                    basicPrice = '205',
+                    premiumPrice = '313',
+                    proPrice = '421'
+                " class="text-gray-800 px-4 py-2 rounded-tr-lg rounded-br-lg bg-gray-200" :class=" billingType === 'year' ? 'bg-blue-300' : 'bg-gray-200' " title="Choose Annual billing">
+                Annual billing
+            </button>
+        </div>
+    </div>
+    <div class="w-full 2xl:w-3/4 flex items-center justify-center px-8 md:px-32 lg:px-16 2xl:px-0 mx-auto -mt-8">
+        <div class="w-full grid grid-cols-1 xl:grid-cols-3 gap-8">
+            <div class="bg-white shadow-2xl rounded-lg py-4">
+                <p class="text-xl text-center font-bold text-blue-600">Basic</p>
+                <p class="text-center py-8">
+                    <span class="text-4xl font-bold text-gray-700">
+                        $<span x-text="basicPrice">19</span>    
+                    </span>
+                    <span class="text-xs uppercase text-gray-500">
+                        / <span x-text="billingType">month</span>
+                    </span>
+                </p>
+                <ul class="border-t border-gray-300 py-8 space-y-6">
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Free Setup Guidance</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Email Support</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">User Management</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Reports</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-gray-300 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-400 capitalize">Unlimited Users</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-gray-300 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-400 capitalize">Data Export</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-gray-300 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-400 capitalize">Automated Workflows</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-gray-300 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-400 capitalize">API Access</span>
+                    </li>
+                </ul>
+                <div class="flex items-center justify-center mt-6">
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Purchase</a>
+                </div>
+            </div>
+            <div class="bg-white shadow-2xl rounded-lg py-4">
+                <p class="text-xl text-center font-bold text-blue-600">Premium</p>
+                <p class="text-center py-8">
+                    <span class="text-4xl font-bold text-gray-700">
+                        $<span x-text="premiumPrice">29</span>
+                    </span>
+                    <span class="text-xs uppercase text-gray-500">
+                        / <span x-text="billingType">month</span>
+                    </span>
+                </p>
+                <ul class="border-t border-gray-300 py-8 space-y-6">
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Free Setup Guidance</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Email Support</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">User Management</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Reports</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Unlimited Users</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Data Export</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-gray-300 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-400 capitalize">Automated Workflows</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-gray-300 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-400 capitalize">API Access</span>
+                    </li>
+                </ul>
+                <div class="flex items-center justify-center mt-6">
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Purchase</a>
+                </div>
+            </div>
+            <div class="bg-white shadow-2xl rounded-lg py-4">
+                <p class="text-xl text-center font-bold text-blue-600">Pro</p>
+                <p class="text-center py-8">
+                    <span class="text-4xl font-bold text-gray-700">
+                        $<span x-text="proPrice">39</span>
+                    </span>
+                    <span class="text-xs uppercase text-gray-500">
+                        / <span x-text="billingType">month</span>
+                    </span>
+                </p>
+                <ul class="border-t border-gray-300 py-8 space-y-6">
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Free Setup Guidance</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Email Support</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">User Management</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Reports</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Unlimited Users</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Data Export</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">Automated Workflows</span>
+                    </li>
+                    <li class="flex items-center space-x-2 px-8">
+                        <span class="bg-blue-600 rounded-full p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                        <span class="text-gray-600 capitalize">API Access</span>
+                    </li>
+                </ul>
+                <div class="flex items-center justify-center mt-6">
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Purchase</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`,
+        },
       ],
     },
     canvas :{
@@ -455,6 +1034,7 @@
   editor.Commands.add("set-device-mobile", {
     run: (editor) => editor.setDevice("Mobile"),
   });
+
   function saveContent(e){
     e.preventDefault()
     console.log(editor.getHtml(), editor.getCss());

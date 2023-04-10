@@ -84,3 +84,27 @@ admin / 1234
 
 https://www.youtube.com/watch?v=TOLCkFqd4nI&list=PLkeoo2ahcgvdTTx2U835RAO_R8UwS6oaf&ab_channel=KumarAbhishek008 
 
+Free Components for blocks : https://tailwindcomponents.com/
+
+
+# R&D
+
+## Chatbots are next: 
+
+https://github.com/ldulcic/customer-support-chatbot
+
+https://github.com/Vinithavn/Finetune-GPT-3-for-customer-support-chatbot-
+
+https://github.com/alfredfrancis/ai-chatbot-framework
+
+https://medium.com/@pospielov/create-your-own-chatgpt-for-customer-service-in-15-minutes-b3c44e84514a
+
+## Then comes payment methods
+
+### Paypal :
+
+https://github.com/jazzband/django-payments
+
+https://django-payments.readthedocs.io/en/latest/index.html  - has a lot of providers backend 
+
+https://djangopackages.org/grids/g/payment-processing/ - comparisons
