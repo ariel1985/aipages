@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AI Pages</title>
     <link rel="stylesheet" href="//unpkg.com/grapesjs/dist/css/grapes.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/grapesjs"></script>
     <style>
@@ -14,7 +14,6 @@
         #gjs {
             border: 3px solid #444;
         }
-        
         /* Reset some default styling */
         .gjs-cv-canvas {
             top: 0;
@@ -24,9 +23,25 @@
     </style>
 </head>
 <body>
+    <header>
+        <ol>
+            <li><a href="{% url 'home:index' %}">Home</a></li>
+            <li><a href="{% url 'builder:add' %}">Add</a></li>
+            <!-- <li><a href="{ % url 'about'%}">About</a></li> -->
+            <!-- <li><a href="about.html">About</a></li> -->
+            <!-- <li><a href="{ % url 'index' % }">Portfolio</a></li> -->
+        </ol>
+    </header>
+
     {% block content %}
 
     {% endblock %}
-    <footer> &copy; All rights belong to me!</footer>
+    
+    <footer>
+         &copy; All rights belong to me!
+    </footer>
+
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
+

@@ -108,3 +108,41 @@ https://github.com/jazzband/django-payments
 https://django-payments.readthedocs.io/en/latest/index.html  - has a lot of providers backend 
 
 https://djangopackages.org/grids/g/payment-processing/ - comparisons
+
+Best practice file structure:
+
+my_website/
+│
+├── templates/
+│   └── base.html
+│
+├── home/
+│   ├── templates/
+│   │   ├── home/
+│   │   │   └── index.html
+│   │
+│   ├── static/
+│   │   ├── home/
+│   │   │   ├── css/
+│   │   │   └── js/
+│
+├── builder/
+│   ├── templates/
+│   │   ├── builder/
+│   │   │   └── index.html
+│   │
+│   ├── static/
+│   │   ├── builder/
+│   │   │   ├── css/
+│   │   │   └── js/
+
+
+
+# Troubleshooting:
+
+```
+sudo lsof -i:8000
+kill -9 PI
+```
+
+
