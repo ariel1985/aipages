@@ -18,10 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('home.urls', namespace='home')),
     path('admin/', admin.site.urls),
+    path('', include('home.urls', namespace='home')),
     path('', include('builder.urls', namespace='builder')),
-
+    path('chatbot/', include('chatbot.urls', namespace='chatbot')),  # Added namespace here
 ]
 
 

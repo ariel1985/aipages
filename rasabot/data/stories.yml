@@ -1,0 +1,41 @@
+version: "3.1"
+
+stories:
+- story: singing path
+  steps:
+  - intent: sing
+  - action: utter_song
+
+- story: sales path
+  steps:
+  - intent: greet # user
+  - action: utter_offer # ai
+  - intent: mood_buy # user
+  - action: utter_sold #ai
+
+- story: happy path
+  steps:
+  - intent: greet # user
+  - action: utter_greet # AI
+  - intent: mood_great # user
+  - action: utter_happy # ai
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye

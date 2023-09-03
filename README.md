@@ -1,9 +1,7 @@
 # AI Pages first edition
 
 # Running
-
-```
-
+```bash
 source venv/bin/activate
 
 python manage.py runserver
@@ -87,17 +85,40 @@ https://www.youtube.com/watch?v=TOLCkFqd4nI&list=PLkeoo2ahcgvdTTx2U835RAO_R8UwS6
 Free Components for blocks : https://tailwindcomponents.com/
 
 
-# R&D
 
 ## Chatbots are next: 
 
-https://github.com/ldulcic/customer-support-chatbot
+### To install 
+```bash
+pip install rasa
+python -m rasa --version
 
-https://github.com/Vinithavn/Finetune-GPT-3-for-customer-support-chatbot-
+pip install 'sqlalchemy<2.0'
 
-https://github.com/alfredfrancis/ai-chatbot-framework
+```
 
-https://medium.com/@pospielov/create-your-own-chatgpt-for-customer-service-in-15-minutes-b3c44e84514a
+### To run
+
+```bash
+cd poc3/rasabot # folder rasa was installed
+
+python -m rasa run --enable-api --cors "*"
+
+python -m rasa shell --debug
+
+```
+
+### To test
+```bash
+curl localhost:5005/model/parse -d '{"text":"hello"}'
+```
+
+chatGPT can be implemented in rasa 
+https://medium.com/@maliahrajan/unleashing-the-power-of-ai-create-a-next-generation-chatbot-with-rasa-and-chatgpt-aba87f30cb94
+
+
+
+# R&D
 
 ## Then comes payment methods
 

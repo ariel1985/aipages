@@ -1,0 +1,67 @@
+# https://chatbotbusinessframework.com/33-common-chatbot-intents/
+# https://github.com/RasaHQ/rasa/blob/main/examples/knowledgebasebot/domain.yml 
+
+version: "3.1"
+
+# intents are categories of things your users say
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - mood_buy
+  - sing
+# order, buy, ship ...
+
+
+# responses is what the assistant (chatbot avatar) says
+# This is assuming that were not doing any custom NLG (natural language generation) such as chatGPT
+# I guess this is were implementation of chatgpt is
+responses:
+  # multiple responses are randomly selected
+
+  utter_song:
+  - text: "A ha a ha"
+
+  utter_offer:
+  - text: "Buy this item"
+  - text: "This item is available, buy it now!"
+  - text: "Buy buy and bye bye!"
+
+  utter_sold: 
+  - text: "Sold!"
+  - text: "Going once, going twice... Sold to the lady in the chat!"
+  - text: "You just bought this item"
+
+  utter_greet: 
+  - text: "How you doin?"
+  - text: "Hey! How are you?"
+  - text: "OMG {name}!, its good to see you here"
+  # buttons:
+  #   - title: "great"
+  #     payload: "/mood_great"
+  #   - title: "super sad"
+  #     payload: "/mood_sad"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
