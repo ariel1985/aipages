@@ -53,3 +53,7 @@ def preview_page(request, id):
 def list_pages(request):
     pages = Pages.objects.all()
     return render(request, 'portfolio.html', { "pages": pages })
+
+def grapesjs_editor(request):
+    blocks = GrapesJSBlock.objects.all()
+    return render(request, 'index.html', {'blocks': blocks})
