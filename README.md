@@ -1,6 +1,6 @@
 # AI Pages first edition
 
-# Running
+## Python Running
 ```bash
 source venv/bin/activate
 
@@ -8,7 +8,7 @@ python manage.py runserver
 ```
 
 
-# Fresh Ubuntu Installation Set up:
+## Fresh Ubuntu Installation Set up:
 
 The history: 
 
@@ -24,7 +24,12 @@ cd poc0/
 
 # activate virtualenv
 source venv/bin/activate
+```
 
+
+## Django Installation Set up:
+
+```bash
 # set up django
 django-admin startproject aipages .
 python manage.py migrate
@@ -77,8 +82,7 @@ admin / 1234
 
 ```
 
-
-# Usful tutorials
+### Usful tutorials
 
 https://www.youtube.com/watch?v=TOLCkFqd4nI&list=PLkeoo2ahcgvdTTx2U835RAO_R8UwS6oaf&ab_channel=KumarAbhishek008 
 
@@ -86,18 +90,17 @@ Free Components for blocks : https://tailwindcomponents.com/
 
 
 
-## Chatbots are next: 
+# Chatbots are next: 
 
-### To install 
+## To install 
 ```bash
 pip install rasa
 python -m rasa --version
 
 pip install 'sqlalchemy<2.0'
-
 ```
 
-### To run
+## To run
 
 ```bash
 cd poc3/rasabot # folder rasa was installed
@@ -115,6 +118,10 @@ curl localhost:5005/model/parse -d '{"text":"hello"}'
 
 chatGPT can be implemented in rasa 
 https://medium.com/@maliahrajan/unleashing-the-power-of-ai-create-a-next-generation-chatbot-with-rasa-and-chatgpt-aba87f30cb94
+
+
+# WhatsApp API is next...
+https://medium.com/@alfredpfrancis/integrate-rasa-with-whatsapp-1b1477b51090
 
 
 

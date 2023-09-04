@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% if pages %}
+
+<div class="cards-container">
+    {% for page in pages %}
+    <div class="card">
+        <div class="card-title">{{ page.name }} - {{ page.id }} </div>
+        <div class="card-description">{{ page.description }}</div>
+        <div class="card-links">
+            <a class="menu-item" href="{% url 'builder:previewPage' page.id %}">Preview</a>
+            <a class="menu-item" href="{% url 'builder:editPage' page.id %}">Edit</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endif %}
+{% endblock %}

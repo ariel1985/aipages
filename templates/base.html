@@ -25,13 +25,11 @@
 </head>
 <body>
     <header>
-        <ol>
-            <li><a href="{% url 'home:index' %}">Home</a></li>
-            <li><a href="{% url 'builder:add' %}">Add</a></li>
-            <!-- <li><a href="{ % url 'about'%}">About</a></li> -->
-            <!-- <li><a href="about.html">About</a></li> -->
-            <!-- <li><a href="{ % url 'index' % }">Portfolio</a></li> -->
-        </ol>
+        <nav class="menu">
+            <a class="menu-item" href="{% url 'home:index' %}">Home</a>
+            <a class="menu-item" href="{% url 'builder:add' %}">Add</a>
+            <a class="menu-item" href="{% url 'builder:listPages' %}">Portfolio</a>
+        </nav>
     </header>
 
     {% block content %}

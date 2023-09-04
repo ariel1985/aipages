@@ -19,10 +19,10 @@ def index(request):
     return render(request, 'pages.html', { "pages": pages })
     # return render(request, 'index.html')
 
-def addPage(request):
+def add_page(request):
     return render(request, 'index.html')
 
-def savePage(request):
+def save_page(request):
     if(request.method=='POST'):
         html = request.POST['html']
         css = request.POST['css']
@@ -31,11 +31,11 @@ def savePage(request):
     return JsonResponse({ "result" : (json.loads(serialize('json', [page])))[0]}) 
     # return JsonResponse({ "result" : {"html": html, "css": css }})
 
-def editPage(request, id):
+def edit_page(request, id):
     page = Pages.objects.get(pk=id)
     return render(request, 'index.html', {"page": page})
 
-def editPageContent(request, id):
+def edit_page_content(request, id):
     if(request.method=='POST'):
         html = request.POST['html']
         css = request.POST['css']
@@ -45,6 +45,11 @@ def editPageContent(request, id):
         page.save()
     return JsonResponse({ "result" : (json.loads(serialize('json', [page])))[0]})    
 
-def previewPage(request, id):
+def preview_page(request, id):
     page = Pages.objects.get(pk=id)
     return render(request, 'preview.html', {"page": page})
+
+
+def list_pages(request):
+    pages = Pages.objects.all()
+    return render(request, 'portfolio.html', { "pages": pages })
