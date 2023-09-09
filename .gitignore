@@ -43,6 +43,9 @@ migrations
 # IntelliJ
 out/
 
+# vscode
+.vscode
+
 # JIRA plugin
 atlassian-ide-plugin.xml
 
