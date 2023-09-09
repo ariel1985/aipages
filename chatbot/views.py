@@ -5,6 +5,9 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseNotAllowed
 from .models import Message, Chat
 import requests
+from django.core.paginator import Paginator
+from django.db.models import Q
+
 
 # from django.views.decorators.csrf import csrf_exempt # to test from curl only:
 
@@ -17,6 +20,46 @@ def chat_view(request):
     return render(request, 'chatbot/chat.html')
 
 
+def chats_view(request):
+    # Initial chats queryset
+    chats_list = Chat.objects.all()
+
+    # Filtering based on GET parameters
+    chat_id = request.GET.get('chat_id')
+    user_name = request.GET.get('user_name')
+    start_date = request.GET.get('start_date')
+    end_date = request.GET.get('end_date')
+    message_content = request.GET.get('message_content')
+
+    if chat_id:
+        chats_list = chats_list.filter(id=chat_id)
+    if user_name:
+        chats_list = chats_list.filter(messages__user__username__icontains=user_name).distinct()
+    if start_date:
+        chats_list = chats_list.filter(start_date__date=start_date)
+    if end_date:
+        chats_list = chats_list.filter(end_date__date=end_date)
+    if message_content:
+        chats_list = chats_list.filter(messages__content__icontains=message_content).distinct()
+
+    # Pagination
+    paginator = Paginator(chats_list, 10)  # Show 10 chats per page
+    page_number = request.GET.get('page')
+    chats = paginator.get_page(page_number)
+
+    for chat in chats:
+        first_message = chat.messages.first()
+        if first_message:
+            chat.user_name = first_message.user.username
+        else:
+            chat.user_name = "Unknown"
+        chat.message_count = chat.messages.count()
+
+    return render(request, 'chatbot/chats.html', {'chats': chats})
+
+
+
+    return render(request, 'chatbot/chats.html', {'chats': chats})
 def view_chat(request, chat_id):
     try:
         chat = Chat.objects.get(pk=chat_id)

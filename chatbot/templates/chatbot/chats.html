@@ -1,0 +1,67 @@
+{% extends "chatbot/base.html" %}
+
+{% block title %}All my chats{% endblock %}
+
+{% block content %}
+<div id="wrapall">
+    <h1>All my chats </h1>
+
+    <form method="get" action="{% url 'chatbot:chats' %}">
+        ID: <input type="text" name="chat_id" value="{{ request.GET.chat_id }}">
+        User Name: <input type="text" name="user_name" value="{{ request.GET.user_name }}">
+        Start Date: <input type="date" name="start_date" value="{{ request.GET.start_date }}">
+        End Date: <input type="date" name="end_date" value="{{ request.GET.end_date }}">
+        Message: <input type="text" name="message_content" value="{{ request.GET.message_content }}">
+        <input type="submit" value="Filter">
+    </form>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>User Name</th>
+                <th>Messages</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for chat in chats %}
+            <tr>
+                <td><a href="{% url 'chatbot:view_chat' chat.id %}" target="_blank">{{ chat.id }}</a></td>
+                <td>{{ chat.start_date|date:"D j,Y H:i" }}</td>
+                <td>
+                    {% if chat.end_date %}
+                        {{ chat.end_date|date:"D j,Y H:i" }}
+                    {% else %}
+                        Ongoing
+                    {% endif %}
+                </td>
+                
+                <td>{{ chat.user_name }}</td>
+                <td>{{ chat.message_count }}</td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if chats.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ chats.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ chats.number }} of {{ chats.paginator.num_pages }}.
+            </span>
+    
+            {% if chats.has_next %}
+                <a href="?page={{ chats.next_page_number }}">next</a>
+                <a href="?page={{ chats.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'chatbot/favicon.ico' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ROZ Chatbot</title>
+        <link rel="stylesheet" href="{% static 'chatbot/css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <nav class="menu">
+                <a class="menu-item logo" href="{% url 'chatbot:chats' %}">
+                    &real;&Theta;&Zeta; &hearts; &Beta;&theta;&Tau;
+                </a> 
+                <a class="menu-item" href="{% url 'chatbot:chats' %}">Home</a> 
+                <a class="menu-item" href="{% url 'chatbot:chat' %}">Chat</a> 
+                <a class="menu-item" href="{% url 'home:index' %}">AI Pages</a>
+            </nav>
+        </header>
+
+        {% block content %}
+
+        {% endblock %}
+        
+        <footer>
+            &copy; All rights belong to me!
+        </footer>
+
+        {% block extra_js %}{% endblock %}
+    </body>
+</html>
+

@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.logo {
+    color: #8BC34A !important;
+}
+
+/* Top Menu */
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #555;
+}
+
+/* Chat */
+#wrap {
+    margin: 0 auto;
+    width: 21em;
+}
+
+#chatbox {
+    width: 20em;
+    height: 20em;
+    border: 1px solid black;
+    overflow: auto;
+    margin: 1em 0;
+}
+#userInput {
+    width: 19.7em;
+}
+
+/* All my chats */
+#wrapall {
+    text-align: center;
+}
+#wrapall table {
+    margin: 0 auto;
+    border: none;
+}
+
+#wrapall table tr th{
+    padding: 0.5em;
+    text-decoration: underline;
+    
+}
+#wrapall table tr td{
+    padding: 0.5em;
+}
+
+/* Pagination */
+.pagination {
+    margin: 1em 0;
+}
