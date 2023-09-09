@@ -24,11 +24,12 @@ def api_chat(request):
         bot_response = rasa_data[0]['text'] if rasa_data and len(rasa_data) > 0 else 'No answer'
         try:
             # Save the conversation to the database
-            Conversation.objects.create(user_message=user_message, bot_response=bot_response)
+            conversation = Conversation.objects.create(user_message=user_message, bot_response=bot_response)
+            new_row_id = conversation.id
         except Exception as e:
             print(f"Error saving conversation: {e}")
             # Optionally, send back an error response or handle the exception as needed
         
-        return JsonResponse({'response': bot_response})
+        return JsonResponse({'response': bot_response, 'row_id': new_row_id})
     else:
         return HttpResponseNotAllowed(['POST'], "This endpoint only supports POST requests.")

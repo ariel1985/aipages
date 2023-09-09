@@ -1,5 +1,6 @@
 document.querySelector("#sendButton").addEventListener("click", async () => {
     const userInput = document.querySelector("#userInput").value;
+    console.log('user input: ', userInput);
 
     // Step 1: Send message to Django server
     fetch('/chatbot/api/chat/', {
