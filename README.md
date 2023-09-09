@@ -112,6 +112,16 @@ python -m rasa shell --debug
 ```
 
 ### To test
+
+
+**Testing Django chatbot api for saving conversation**
+
+```
+python manage.py test chatbot
+```
+
+
+**Testing the Rasa Model**
 ```bash
 curl localhost:5005/model/parse -d '{"text":"hello"}'
 ```

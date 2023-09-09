@@ -2,13 +2,15 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseNotAllowed
 from .models import Conversation
 import requests
-from django.views.decorators.csrf import csrf_exempt
+
+# from django.views.decorators.csrf import csrf_exempt
 
 
 def chat_view(request):
     return render(request, 'chatbot/chat.html')
 
-@csrf_exempt
+# to test from curl only:
+# @csrf_exempt
 def api_chat(request):
     if request.method == "POST":
         user_message = request.POST.get('message')
