@@ -1,17 +1,65 @@
-document.querySelector("#sendButton").addEventListener("click", async () => {
-    const userInput = document.querySelector("#userInput").value;
-    console.log('user input: ', userInput);
+// Function to get the Django CSRF token
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
-    // Step 1: Send message to Django server
-    fetch('/chatbot/api/chat/', {
+// start chat
+document.querySelector("#startChatButton").addEventListener("click", () => {
+    fetch('/chatbot/api/chat/start/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRFToken': getCookie('csrftoken')  // For Django CSRF token
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if(data.conversation_id) {
+            document.getElementById('chat_id').value = data.conversation_id;
+            document.getElementById('current_chat_id').innerHTML = data.conversation_id;
+            document.querySelector("#chatbox").innerHTML = '';
+            console.log('New conversation ID:', data.conversation_id);
+            
+        } else {
+            console.log('no new id...');
+        }
+    })
+    .catch(error => {
+        console.log('Fetch error:', error);
+    });
+});
+
+// --- save chat
+document.querySelector("#sendButton").addEventListener("click", async () => {
+    const userInput = document.querySelector("#userInput").value;
+    const chat_id = document.getElementById('chat_id').value;
+    console.log('chat: ', chat_id, 'user input: ', userInput);
+
+    fetch('/chatbot/api/chat/message/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
         },
-        body: new URLSearchParams({
-            'message': userInput
+        body: JSON.stringify({
+            message: userInput,
+            conversation_id: chat_id 
         })
     })
     .then(response => response.json())
@@ -30,18 +78,18 @@ document.querySelector("#sendButton").addEventListener("click", async () => {
     });
 });
 
-// Function to get the Django CSRF token
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
+// end chat
+document.querySelector("#endChatButton").addEventListener("click", async () => {
+    const chat_id = document.getElementById('chat_id').value;
+    console.log('Ending chat id', chat_id);
+
+    await fetch('/chatbot/end_chat/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify({conversation_id: chat_id})
+    });
+    // Rest of the code...
+});

@@ -1,38 +1,41 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Chat</title>
     <style>
+        #wrap {
+            margin: 0 auto;
+        }
         #chatbox {
-            width: 300px;
-            height: 400px;
+            width: 20em;
+            height: 20em;
             border: 1px solid black;
             overflow: auto;
+            margin: 1em 0;
         }
         #userInput {
-            width: 300px;
+            width: 19.7em;
         }
     </style>
 </head>
 <body>
-    <h1>A chatbot is not Generative AI! </h1>
-    <p> Rasa is simply the framework (why need one if you can just use an API? - oh yeah security) for other engines like Generative AI - ChatGPT</p>
+    <div id="wrap">
+        <h1>&real;&Theta;&Zeta; &hearts; &Beta;&theta;&Tau; <span id="current_chat_id"></span> </h1>
+        <p> Rasa based Chatbot</p>
 
-    <div id="chatbox">
-        <!-- Chat messages will be added here -->
-    </div>
-    <input id="userInput" type="text" />
-    <button id="sendButton">Send</button>
+        <input type="hidden" id="chat_id" value="">
 
+        <button id="startChatButton">Start Chat</button> 
+        <button id="endChatButton">End Chat</button>
+        <br><br>
+        <div id="chatbox">
+            <!-- Chat messages will be added here -->
+        </div>
+        <input id="userInput" type="text" />
+        <button id="sendButton">Send</button>
+    </div>    
     <script src="{% static 'chatbot/chat.js' %}"></script>
-
-    <h3>Priorities</h3>
-    <ol>
-        <li>Website - Fix the base html</li>
-        <li>Chatbot MVP for a simple sale of diet product - AgentGPT can learn from the content of the website</li>
-        <li>NoCode Landing page - implement GrapeJS demo</li>
-        <li>NoCode Landing page - create a template (start with one!)</li>
-    </ol>
 </body>
 </html>
