@@ -102,3 +102,17 @@ function end_chat() {
 document.querySelector("#startChatButton").addEventListener("click", start_chat);
 document.querySelector("#sendButton").addEventListener("click", save_chat);
 document.querySelector("#endChatButton").addEventListener("click", end_chat);
+
+
+
+// After your existing JavaScript functions:
+
+function populate_chat(chat_data) {
+    const chatbox = document.querySelector("#chatbox");
+    chat_data.forEach(message => {
+        const msgElement = document.createElement("p");
+        msgElement.textContent = message.user + ": " + message.content;
+        chatbox.appendChild(msgElement);
+    });
+}
+

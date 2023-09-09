@@ -3,7 +3,7 @@ from django.utils import timezone # from datetime import timezone was no good fo
 import json
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseNotAllowed
-from .models import Chat
+from .models import Message, Chat
 import requests
 
 # from django.views.decorators.csrf import csrf_exempt # to test from curl only:
@@ -11,15 +11,25 @@ import requests
 
 def chat_view(request):
     # Create a new Chat instance when the chat page is loaded
-    chat = Chat.objects.create()
-    request.session['chat_id'] =chat.id  # Store chat ID in session
-    return render(request, 'chatbot/chat.html', {'chat_id': chat.id})
+    # chat = Chat.objects.create()
+    # request.session['chat_id'] =chat.id  # Store chat ID in session
+    # return render(request, 'chatbot/chat.html', {'chat_id': 0})
+    return render(request, 'chatbot/chat.html')
+
+
+def view_chat(request, chat_id):
+    try:
+        chat = Chat.objects.get(pk=chat_id)
+        messages = chat.messages.all().order_by('timestamp')
+        chat_data = [{"user": msg.user.username if msg.user else "Bot", "content": msg.content} for msg in messages]
+        return render(request, 'chatbot/chat.html', {'chat_data': chat_data, 'chat_id': chat_id})
+
+    except Chat.DoesNotExist:
+        return JsonResponse({'error': 'Chat not found'}, status=404)
 
 
 # to test from curl only:
 # @csrf_exempt
-from .models import Message, Chat
-
 def save_chat(request):
     if request.method == "POST":
         

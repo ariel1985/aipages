@@ -3,10 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'chatbot/favicon.ico' %}">
     <title>Chat</title>
     <style>
         #wrap {
             margin: 0 auto;
+        }
+        #logo {
+            color: #8BC34A;
         }
         #chatbox {
             width: 20em;
@@ -22,7 +26,7 @@
 </head>
 <body>
     <div id="wrap">
-        <h1>&real;&Theta;&Zeta; &hearts; &Beta;&theta;&Tau; <span id="current_chat_id"></span> </h1>
+        <h1 id="logo">&real;&Theta;&Zeta; &hearts; &Beta;&theta;&Tau; <span id="current_chat_id"></span> </h1>
         <p> Rasa based Chatbot</p>
 
         <input type="hidden" id="chat_id" value="">
@@ -35,7 +39,24 @@
         </div>
         <input id="userInput" type="text" />
         <button id="sendButton">Send</button>
-    </div>    
+    </div> 
+
+
     <script src="{% static 'chatbot/chat.js' %}"></script>
+    <script type="text/javascript">
+        const chat_data = {{ chat_data|safe }};
+        const chatid = {{ chat_id|safe }};
+        // Check if chat_data is available and populate
+        if (chat_data && Array.isArray(chat_data)) {
+            document.getElementById('current_chat_id').innerHTML = chatid
+            console.log('populating chat_data', chat_data);
+            if (chat_data.length > 0 ) {
+                populate_chat(chat_data);
+            }
+            else {
+                console.log('nothing to show for.... ');
+            }
+        }
+    </script>
 </body>
 </html>
