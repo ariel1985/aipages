@@ -1,4 +1,3 @@
-// Function to get the Django CSRF token
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -14,9 +13,8 @@ function getCookie(name) {
     return cookieValue;
 }
 
-// start chat
-document.querySelector("#startChatButton").addEventListener("click", () => {
-    fetch('/chatbot/api/chat/start/', {
+function start_chat() {
+    return fetch('/chatbot/api/chat/start/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -30,26 +28,28 @@ document.querySelector("#startChatButton").addEventListener("click", () => {
         return response.json();
     })
     .then(data => {
-        if(data.conversation_id) {
-            document.getElementById('chat_id').value = data.conversation_id;
-            document.getElementById('current_chat_id').innerHTML = data.conversation_id;
+        if(data.chat_id) {
+            document.getElementById('chat_id').value = data.chat_id;
+            document.getElementById('current_chat_id').innerHTML = data.chat_id;
             document.querySelector("#chatbox").innerHTML = '';
-            console.log('New conversation ID:', data.conversation_id);
-            
+            console.log('New chat ID:', data.chat_id);
+            return data.chat_id;
         } else {
             console.log('no new id...');
+            return null;
         }
-    })
-    .catch(error => {
-        console.log('Fetch error:', error);
     });
-});
+}
 
-// --- save chat
-document.querySelector("#sendButton").addEventListener("click", async () => {
+
+async function save_chat() {
     const userInput = document.querySelector("#userInput").value;
-    const chat_id = document.getElementById('chat_id').value;
-    console.log('chat: ', chat_id, 'user input: ', userInput);
+    let chat_id = document.getElementById('chat_id').value;
+
+    if (!chat_id) {
+        chat_id = await start_chat(); // Here, you wait for the Promise to resolve and get the chat_id
+    }
+    console.log('Edited chat_id', chat_id);
 
     fetch('/chatbot/api/chat/message/', {
         method: 'POST',
@@ -59,12 +59,11 @@ document.querySelector("#sendButton").addEventListener("click", async () => {
         },
         body: JSON.stringify({
             message: userInput,
-            conversation_id: chat_id 
+            chat_id: chat_id
         })
     })
     .then(response => response.json())
     .then(data => {
-        console.log('data', data);
         const newMessageUser = document.createElement("p");
         newMessageUser.textContent = "You: " + userInput;
         document.querySelector("#chatbox").appendChild(newMessageUser);
@@ -73,23 +72,33 @@ document.querySelector("#sendButton").addEventListener("click", async () => {
         newMessageBot.textContent = "Bot: " + data.response;
         document.querySelector("#chatbox").appendChild(newMessageBot);
     })
-    .catch((error) => {
+    .catch(error => {
         console.error('Error:', error);
     });
-});
+}
 
-// end chat
-document.querySelector("#endChatButton").addEventListener("click", async () => {
+function end_chat() {
     const chat_id = document.getElementById('chat_id').value;
-    console.log('Ending chat id', chat_id);
 
-    await fetch('/chatbot/end_chat/', {
+    fetch('/chatbot/api/chat/end/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': getCookie('csrftoken')
         },
-        body: JSON.stringify({conversation_id: chat_id})
+        body: JSON.stringify({chat_id: chat_id})
+    })
+    .then(data => {
+        if (data.ok) 
+            console.log('Chat has ended...', data);
+        else 
+            console.log('No good... no end to the chat');
+    })
+    .catch(error => {
+        console.error('Error:', error);
     });
-    // Rest of the code...
-});
+}
+
+document.querySelector("#startChatButton").addEventListener("click", start_chat);
+document.querySelector("#sendButton").addEventListener("click", save_chat);
+document.querySelector("#endChatButton").addEventListener("click", end_chat);

@@ -1,40 +1,39 @@
+
+from django.utils import timezone # from datetime import timezone was no good for django
 import json
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseNotAllowed
-from .models import Conversation
+from .models import Chat
 import requests
 
 # from django.views.decorators.csrf import csrf_exempt # to test from curl only:
 
 
 def chat_view(request):
-    # Create a new Conversation instance when the chat page is loaded
-    conversation = Conversation.objects.create()
-    request.session['conversation_id'] = conversation.id  # Store conversation ID in session
-    return render(request, 'chatbot/chat.html', {'conversation_id': conversation.id})
+    # Create a new Chat instance when the chat page is loaded
+    chat = Chat.objects.create()
+    request.session['chat_id'] =chat.id  # Store chat ID in session
+    return render(request, 'chatbot/chat.html', {'chat_id': chat.id})
 
 
 # to test from curl only:
 # @csrf_exempt
-from .models import Message, Conversation
+from .models import Message, Chat
 
 def save_chat(request):
     if request.method == "POST":
         
-        # user_message = request.POST.get('message')
-        # conversation_id = request.POST.get('conversation_id')  # Expect the frontend to send the conversationId
-        
         data = json.loads(request.body.decode("utf-8"))
-        conversation_id = data.get('conversation_id')
+        chat_id = data.get('chat_id')
         user_message = data.get('message')
 
-        # Validate conversation exists and type
+        # Validate chat exists and type
         try:
-            conversation = Conversation.objects.get(pk=int(conversation_id))
+            chat = Chat.objects.get(pk=int(chat_id))
         except ValueError:
-            return JsonResponse({'error': 'Invalid conversation_id format. Expected an integer.'}, status=400)
-        except Conversation.DoesNotExist:
-            return JsonResponse({'error': 'Invalid conversation_id'}, status=400)
+            return JsonResponse({'error': 'Invalid chat_id format. Expected an integer.'}, status=400)
+        except Chat.DoesNotExist:
+            return JsonResponse({'error': 'Invalid chat_id'}, status=400)
 
 
         # Sending the message to Rasa
@@ -49,14 +48,14 @@ def save_chat(request):
         try:
             # Save the user's message
             Message.objects.create(
-                conversation=conversation,
+                chat=chat,
                 user=request.user,  # assuming you have authentication in place
                 content=user_message
             )
 
             # Save the bot's response
             Message.objects.create(
-                conversation=conversation,
+                chat=chat,
                 user=None,  # bot messages can have user set to None or a dedicated bot user
                 content=bot_response
             )
@@ -72,16 +71,18 @@ def save_chat(request):
 
 def start_chat(request):
     if request.method == 'POST':
-        new_conversation = Conversation.objects.create()
-        return JsonResponse({'conversation_id': new_conversation.id})
+        new_chat = Chat.objects.create()
+        return JsonResponse({'chat_id': new_chat.id})
     
 # @csrf_exempt
 def end_chat(request):
     if request.method == "POST":
-        data = json.loads(request.body)
-        conversation_id = data.get('conversation_id')
-        conversation = Conversation.objects.get(pk=conversation_id)
-        conversation.end_date = timezone.now()
-        conversation.save()
+        
+        data = json.loads(request.body.decode("utf-8"))
+        chat_id = data.get('chat_id')
+        
+        chat = Chat.objects.get(pk=chat_id)
+        chat.end_date = timezone.now()
+        chat.save()
         return JsonResponse({"status": "success"})
     return JsonResponse({"status": "error"})
