@@ -24,8 +24,9 @@
 
 <script src="{% static 'chatbot/js/chat.js' %}"></script>
 <script type="text/javascript">
-    const chat_data = {{ chat_data|safe }};
-    const chatid = '{{ chat_id|safe }}';
+    const chat_data = {{ chat_data|safe|default:"null" }};
+    const chatid = {{ chat_id|safe|default:"null" }};
+
     // Check if chat_data is available and populate
     if (chat_data && Array.isArray(chat_data)) {
         document.getElementById('current_chat_id').innerHTML = chatid

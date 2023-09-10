@@ -7,9 +7,7 @@ from .models import Message, Chat
 import requests
 from django.core.paginator import Paginator
 from django.db.models import Q
-
-
-# from django.views.decorators.csrf import csrf_exempt # to test from curl only:
+from django.views.decorators.csrf import csrf_exempt # to test from curl only:
 
 
 def chat_view(request):
@@ -20,7 +18,7 @@ def chat_view(request):
     return render(request, 'chatbot/chat.html')
 
 
-def chats_view(request):
+def view_chats(request):
     # Initial chats queryset
     chats_list = Chat.objects.all()
 
@@ -43,7 +41,8 @@ def chats_view(request):
         chats_list = chats_list.filter(messages__content__icontains=message_content).distinct()
 
     # Pagination
-    paginator = Paginator(chats_list, 10)  # Show 10 chats per page
+    num_per_page = 15 # Show 10 chats per page
+    paginator = Paginator(chats_list, num_per_page)  
     page_number = request.GET.get('page')
     chats = paginator.get_page(page_number)
 
@@ -57,9 +56,6 @@ def chats_view(request):
 
     return render(request, 'chatbot/chats.html', {'chats': chats})
 
-
-
-    return render(request, 'chatbot/chats.html', {'chats': chats})
 def view_chat(request, chat_id):
     try:
         chat = Chat.objects.get(pk=chat_id)
@@ -70,9 +66,8 @@ def view_chat(request, chat_id):
     except Chat.DoesNotExist:
         return JsonResponse({'error': 'Chat not found'}, status=404)
 
-
-# to test from curl only:
-# @csrf_exempt
+# TODO: This should not be in production
+@csrf_exempt 
 def save_chat(request):
     if request.method == "POST":
         
@@ -121,13 +116,15 @@ def save_chat(request):
     else:
         return HttpResponseNotAllowed(['POST'], "This endpoint only supports POST requests.")
 
-
+@csrf_exempt # TODO: This should not be in production
 def start_chat(request):
     if request.method == 'POST':
         new_chat = Chat.objects.create()
         return JsonResponse({'chat_id': new_chat.id})
-    
-# @csrf_exempt
+    else:
+        return HttpResponseNotAllowed(['POST'])  # Indicates that only POST is allowed
+  
+@csrf_exempt # TODO: This should not be in production
 def end_chat(request):
     if request.method == "POST":
         
