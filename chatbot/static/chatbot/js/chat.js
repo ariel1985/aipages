@@ -65,13 +65,16 @@ async function save_chat() {
     })
     .then(response => response.json())
     .then(data => {
+        const chatbox = document.querySelector("#chatbox");
         const newMessageUser = document.createElement("p");
         newMessageUser.textContent = "You: " + userInput;
-        document.querySelector("#chatbox").appendChild(newMessageUser);
+        chatbox.appendChild(newMessageUser);
 
         const newMessageBot = document.createElement("p");
         newMessageBot.textContent = "Bot: " + data.response;
-        document.querySelector("#chatbox").appendChild(newMessageBot);
+        chatbox.appendChild(newMessageBot);
+
+        chatbox.scrollTop = chatbox.scrollHeight;
     })
     .catch(error => {
         console.error('Error:', error);
