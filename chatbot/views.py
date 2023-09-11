@@ -20,7 +20,7 @@ def chat_view(request):
 
 def view_chats(request):
     # Initial chats queryset
-    chats_list = Chat.objects.all()
+    chats_list = Chat.objects.all().order_by('-id')
 
     # Filtering based on GET parameters
     chat_id = request.GET.get('chat_id')

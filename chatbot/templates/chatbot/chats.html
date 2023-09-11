@@ -9,9 +9,11 @@
     <form method="get" action="{% url 'chatbot:chats' %}">
         ID: <input type="text" name="chat_id" value="{{ request.GET.chat_id }}">
         User Name: <input type="text" name="user_name" value="{{ request.GET.user_name }}">
+        <!--
         Start Date: <input type="date" name="start_date" value="{{ request.GET.start_date }}">
         End Date: <input type="date" name="end_date" value="{{ request.GET.end_date }}">
         Message: <input type="text" name="message_content" value="{{ request.GET.message_content }}">
+        -->
         <input type="submit" value="Filter">
     </form>
     <br>
@@ -19,16 +21,18 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Start</th>
-                <th>End</th>
                 <th>User Name</th>
                 <th>Messages</th> 
+                <th>Start</th>
+                <th>End</th>
             </tr>
         </thead>
         <tbody>
             {% for chat in chats %}
             <tr>
                 <td><a href="{% url 'chatbot:view_chat' chat.id %}" target="_blank">{{ chat.id }}</a></td>
+                <td>{{ chat.user_name }}</td>
+                <td>{{ chat.message_count }}</td> 
                 <td>{{ chat.start_date|date:"D j,Y H:i" }}</td>
                 <td>
                     {% if chat.end_date %}
@@ -38,8 +42,6 @@
                     {% endif %}
                 </td>
                 
-                <td>{{ chat.user_name }}</td>
-                <td>{{ chat.message_count }}</td> 
             </tr>
             {% endfor %}
         </tbody>
