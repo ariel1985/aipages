@@ -82,12 +82,12 @@ async function save_chat() {
     });
 }
 
-// function handleEnter(event) {
-//     if (event.key === 'Enter') {
-//         event.preventDefault();  // To prevent any default behavior associated with the Enter key
-//         save_chat();
-//     }
-// }
+function handleEnter(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // To prevent any default behavior associated with the Enter key
+        save_chat();
+    }
+}
 
 function end_chat() {
     const chat_id = document.getElementById('chat_id').value;
@@ -111,7 +111,7 @@ function end_chat() {
     });
 }
 
-// document.querySelector("#userInput").addEventListener("keyup", handleEnter);
+document.querySelector("#userInput").addEventListener("keyup", handleEnter);
 document.querySelector("#startChatButton").addEventListener("click", start_chat);
 document.querySelector("#sendButton").addEventListener("click", save_chat);
 document.querySelector("#endChatButton").addEventListener("click", end_chat);

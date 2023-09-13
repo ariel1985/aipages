@@ -1,6 +1,6 @@
 async function save_chat_with_button() {
     console.log('in chat with button');
-    const userInput = document.querySelector("#userInput").value;
+    const userInput2 = document.querySelector("#userInput2").value;
     let chat_id = document.getElementById('chat_id').value;
 
     if (!chat_id) {
@@ -16,7 +16,7 @@ async function save_chat_with_button() {
             'X-CSRFToken': getCookie('csrftoken')
         },
         body: JSON.stringify({
-            message: userInput,
+            message: userInput2,
             chat_id: chat_id
         })
     })
@@ -27,7 +27,7 @@ async function save_chat_with_button() {
         
         // User
         const newMessageUser = document.createElement("p");
-        newMessageUser.textContent = "You: " + userInput;
+        newMessageUser.textContent = "You: " + userInput2;
         chatbox.appendChild(newMessageUser);
 
         // BOT - is more complex
@@ -108,5 +108,5 @@ function handleEnter(event) {
         save_chat_with_button();
     }
 }
-document.querySelector("#userInput").addEventListener("keyup", handleEnter);
+document.querySelector("#userInput2").addEventListener("keyup", handleEnter);
 document.querySelector("#sendButton2").addEventListener("click", save_chat_with_button);
