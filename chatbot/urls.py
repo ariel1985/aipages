@@ -12,4 +12,8 @@ urlpatterns = [
     path('api/chat/end/', views.end_chat, name='end_chat'),
     
     path('chat/<int:chat_id>/', views.view_chat, name='view_chat'),
+    
+    
+    path('button/', views.chat_button, name='chat_button'),
+    # path('chatform/', views.chat_form, name='chat_form'),
 ]

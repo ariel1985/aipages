@@ -1,10 +1,9 @@
-# https://chatbotbusinessframework.com/33-common-chatbot-intents/
-# https://github.com/RasaHQ/rasa/blob/main/examples/knowledgebasebot/domain.yml 
-
 version: "3.1"
 
-# intents are categories of things your users say
+
 intents:
+  - clicked_button # Added this intent to handle the button's payload
+  - clicked_button_2
   - greet
   - goodbye
   - affirm
@@ -14,14 +13,20 @@ intents:
   - bot_challenge
   - mood_buy
   - sing
-# order, buy, ship ...
+  - session_started # to start the session with a button
 
-
-# responses is what the assistant (chatbot avatar) says
-# This is assuming that were not doing any custom NLG (natural language generation) such as chatGPT
-# I guess this is were implementation of chatgpt is
 responses:
-  # multiple responses are randomly selected
+
+  utter_you_clicked: # Add this response to give feedback when the button is clicked
+  - text: "You clicked the button!"
+
+  utter_ask_click_me:
+  - text: "Click Me"
+    buttons:
+    - title: "Click Me"
+      payload: "/clicked_button"
+    - title: "Click Me 2"
+      payload: "/clicked_button_2"
 
   utter_song:
   - text: "A ha a ha"
@@ -39,16 +44,22 @@ responses:
   utter_greet: 
   - text: "How you doin?"
   - text: "Hey! How are you?"
+  - text: "Hi, I'm here to help you and sell you lots of stuff"
   - text: "OMG {name}!, its good to see you here"
-  # buttons:
-  #   - title: "great"
-  #     payload: "/mood_great"
-  #   - title: "super sad"
-  #     payload: "/mood_sad"
+  - text: "Tell me how you feel"
+    buttons:
+      - title: "great"
+        payload: "/mood_great"
+      - title: "super sad"
+        payload: "/mood_sad"
+  - text: "Do you want to click the button?" # Added this response with a button
+    buttons:
+      - title: "Click Me"
+        payload: "/clicked_button"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    image: "https://imgur.com/gallery/KeWFwAZ"
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -65,3 +76,6 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - action_session_start

@@ -1,6 +1,14 @@
 version: "3.1"
 
 stories:
+
+- story: clicked on button
+  steps:
+  - intent: greet
+  - action: utter_ask_click_me
+  - intent: clicked_button
+  - action: utter_you_clicked
+
 - story: singing path
   steps:
   - intent: sing
@@ -24,7 +32,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
+  - intent: mood_great
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: affirm

@@ -25,3 +25,21 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
+
+from rasa_sdk import Action
+from rasa_sdk.events import SlotSet, FollowupAction
+from rasa_sdk.types import Text
+
+
+class ActionSessionStart(Action):
+
+    def name(self) -> Text:
+        return "action_session_start"
+
+    def run(self, dispatcher, tracker, domain):
+        # Any other startup tasks can be placed here.
+        
+        # Now, dispatch the message with the button to the user.
+        dispatcher.utter_message(template="utter_ask_click_me")
+
+        return [FollowupAction("action_listen")]

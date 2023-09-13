@@ -1,6 +1,15 @@
 version: "3.1"
 
 nlu:
+# for good practice
+- intent: clicked_button
+  examples: |
+    - clicked button
+
+- intent: clicked_button_2
+  examples: |
+    - clicked button 2
+
 - intent: sing
   examples: |
     - give it to me baby

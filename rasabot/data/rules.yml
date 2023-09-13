@@ -1,6 +1,14 @@
-version: "3.1"
-
 rules:
+
+- rule: Start session and display button
+  steps:
+  - action: utter_ask_click_me
+
+- rule: Click button rule
+  steps:
+  - action: utter_ask_click_me
+  - intent: clicked_button
+  - action: utter_you_clicked
 
 - rule: Say goodbye anytime the user says goodbye
   steps:

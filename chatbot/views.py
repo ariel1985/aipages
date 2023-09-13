@@ -10,6 +10,11 @@ from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt # to test from curl only:
 
 
+
+def chat_button(request):
+    return render(request, 'chatbot/chat_button.html')
+
+
 def chat_view(request):
     # Create a new Chat instance when the chat page is loaded
     # chat = Chat.objects.create()

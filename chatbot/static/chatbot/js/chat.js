@@ -63,8 +63,9 @@ async function save_chat() {
             chat_id: chat_id
         })
     })
-    .then(response => response.json())
+    .then(response => response.json()) 
     .then(data => {
+        console.log('data', data);
         const chatbox = document.querySelector("#chatbox");
         const newMessageUser = document.createElement("p");
         newMessageUser.textContent = "You: " + userInput;
@@ -79,6 +80,13 @@ async function save_chat() {
     .catch(error => {
         console.error('Error:', error);
     });
+}
+
+function handleEnter(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // To prevent any default behavior associated with the Enter key
+        save_chat();
+    }
 }
 
 function end_chat() {
@@ -103,6 +111,7 @@ function end_chat() {
     });
 }
 
+document.querySelector("#userInput").addEventListener("keyup", handleEnter);
 document.querySelector("#startChatButton").addEventListener("click", start_chat);
 document.querySelector("#sendButton").addEventListener("click", save_chat);
 document.querySelector("#endChatButton").addEventListener("click", end_chat);

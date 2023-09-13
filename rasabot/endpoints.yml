@@ -40,3 +40,10 @@
 #  username: username
 #  password: password
 #  queue: queue
+
+# if you really want to specify a model URL (for more advanced use cases like having a separate server dedicated to serving the model)
+# model:
+#   url: "http://localhost:5002/models/default"
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"
