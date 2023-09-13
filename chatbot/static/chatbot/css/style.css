@@ -31,15 +31,16 @@ body {
 /* Chat */
 #wrap {
     margin: 0 auto;
-    width: 21em;
+    width: 80%;
 }
 
 #chatbox {
-    width: 20em;
-    height: 20em;
-    border: 1px solid black;
+    width: 90%;
+    height: 30em;
+    border: 3px solid black;
     overflow: auto;
     margin: 1em 0;
+    padding: 0.5em;
 }
 #userInput {
     width: 19.7em;

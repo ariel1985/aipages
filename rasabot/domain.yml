@@ -42,10 +42,14 @@ responses:
   - text: "You just bought this item"
 
   utter_greet: 
-  - text: "How you doin?"
-  - text: "Hey! How are you?"
-  - text: "Hi, I'm here to help you and sell you lots of stuff"
-  - text: "OMG {name}!, its good to see you here"
+  - text: "hi"
+  - text: "hello"
+  # - text: "u there"
+  # - text: "you there?"
+  # - text: "How you doin?"
+  # - text: "Hey! How are you?"
+  # - text: "Hi, I'm here to help you and sell you lots of stuff"
+  # - text: "OMG {name}!, its good to see you here"
   - text: "Tell me how you feel"
     buttons:
       - title: "great"
@@ -59,7 +63,7 @@ responses:
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
-    image: "https://imgur.com/gallery/KeWFwAZ"
+    image: "https://i.imgur.com/KeWFwAZ.gif"
 
   utter_did_that_help:
   - text: "Did that help you?"

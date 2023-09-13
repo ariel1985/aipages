@@ -96,6 +96,9 @@ def save_chat(request):
         })
         
         rasa_data = response.json()
+        print(' -- HERE COMES THE DATA --')
+        print(rasa_data)
+        print(' ---- IM A LIVING LIFE GANGSTA ---')
         bot_response = rasa_data[0]['text'] if rasa_data and len(rasa_data) > 0 else 'No answer'
 
         try:
@@ -117,7 +120,7 @@ def save_chat(request):
             print(f"Error saving messages: {e}")
             # Optionally, send back an error response or handle the exception as needed
         
-        return JsonResponse({'response': bot_response})
+        return JsonResponse({'response': bot_response, 'rasa_data': rasa_data})
     else:
         return HttpResponseNotAllowed(['POST'], "This endpoint only supports POST requests.")
 

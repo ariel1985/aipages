@@ -19,10 +19,13 @@
         <!-- Chat messages will be added here -->
     </div>
     <input id="userInput" type="text" />
-    <button id="sendButton">Send</button>
+    <button id="sendButton2">Send2</button>
+    <br>
+    <div id="sendButton">something...</div>
 </div> 
 
 <script src="{% static 'chatbot/js/chat.js' %}"></script>
+<script src="{% static 'chatbot/js/chat_button.js' %}"></script>
 <script type="text/javascript">
     const chat_data = {{ chat_data|safe|default:"null" }};
     const chatid = {{ chat_id|safe|default:"null" }};

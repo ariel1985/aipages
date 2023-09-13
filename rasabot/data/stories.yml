@@ -14,12 +14,12 @@ stories:
   - intent: sing
   - action: utter_song
 
-- story: sales path
-  steps:
-  - intent: greet # user
-  - action: utter_offer # ai
-  - intent: mood_buy # user
-  - action: utter_sold #ai
+# - story: sales path
+#   steps:
+#   - intent: greet # user
+#   - action: utter_offer # ai
+#   - intent: mood_buy # user
+#   - action: utter_sold #ai
 
 - story: happy path
   steps:
